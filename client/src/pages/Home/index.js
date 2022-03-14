@@ -81,7 +81,7 @@ const Home = function () {
       <div className="bgContainer" />
       <div className="mainContainerWrapper">
         <div className="mainContainer">
-        <h2>Symbol Donation List</h2>
+        <h2>Symbol Address List</h2>
 
           <TwitterSignIn
               twitterAccountStatus={twitterAccountStatus}
