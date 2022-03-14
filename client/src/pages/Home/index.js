@@ -47,6 +47,8 @@ const Home = function () {
         ...users,
         data
       });
+
+      setUpdateStatus('Update Successfully');
     } else {
       setUpdateStatus(data.error);
     }
@@ -76,16 +78,10 @@ const Home = function () {
 
   return (
     <div className="App">
-      <div className="bgContainer">
-				{/* <div className="bgArtContainer">
-					<div className="bgImageLeft" />
-					<div className="bgArtMiddle" />
-					<div className="bgImageRight" />
-				</div> */}
-			</div>
+      <div className="bgContainer" />
       <div className="mainContainerWrapper">
         <div className="mainContainer">
-        <h1>Symbol Donation List</h1>
+        <h2>Symbol Donation List</h2>
 
           <TwitterSignIn
               twitterAccountStatus={twitterAccountStatus}
@@ -101,9 +97,8 @@ const Home = function () {
               updateStatus={updateStatus}
           /> : ''
           }
-
-          <Table userList={users} />
         </div>
+        <Table userList={users} />
       </div>
     </div>
   );
