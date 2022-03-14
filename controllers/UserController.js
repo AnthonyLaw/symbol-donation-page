@@ -31,17 +31,17 @@ const controller = {
     const formattedNemAddress = nemAddress.toUpperCase().replace(/-/g, '');
     const formattedSymbolAddress = symbolAddress.toUpperCase().replace(/-/g, '');
 
-    if (formattedNemAddress.length !== 40) {
+    if (formattedNemAddress.length !== 0 && formattedNemAddress.length !== 40) {
       return res.json({ success: false, error: 'Invalid NEM address' });
     }
 
-    if (formattedSymbolAddress.length !== 39) {
+    if (formattedSymbolAddress.length !== 0 && formattedSymbolAddress.length !== 39) {
       return res.json({ success: false, error: 'Invalid SYMBOL address' });
     }
 
     const user = await Users.update({
-      formattedNemAddress,
-      formattedSymbolAddress
+      nemAddress: formattedNemAddress,
+      symbolAddress: formattedSymbolAddress
     },
       {
         where: {
