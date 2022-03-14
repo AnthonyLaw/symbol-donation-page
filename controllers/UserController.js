@@ -27,9 +27,21 @@ const controller = {
     }
 
     const { nemAddress, symbolAddress } = req.body;
+
+    const formattedNemAddress = nemAddress.toUpperCase().replace(/-/g, '');
+    const formattedSymbolAddress = symbolAddress.toUpperCase().replace(/-/g, '');
+
+    if (formattedNemAddress.length !== 40) {
+      return res.json({ success: false, error: 'Invalid NEM address' });
+    }
+
+    if (formattedSymbolAddress.length !== 39) {
+      return res.json({ success: false, error: 'Invalid SYMBOL address' });
+    }
+
     const user = await Users.update({
-      nemAddress,
-      symbolAddress
+      formattedNemAddress,
+      formattedSymbolAddress
     },
       {
         where: {
