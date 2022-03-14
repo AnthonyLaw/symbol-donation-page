@@ -16,7 +16,7 @@ const Table = function ({ userList }) {
       }
 
 	return (
-		<table>
+		<table className='tableContainer'>
         <thead>
           <tr>
             <th>Twitter</th>
