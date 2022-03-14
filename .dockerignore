@@ -1,0 +1,7 @@
+# Backend
+node_modules
+data
+
+# Client
+client/build
+client/node_modules

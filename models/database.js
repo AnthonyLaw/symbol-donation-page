@@ -6,7 +6,7 @@ const database = new Sequelize(
   {
     host: 'localhost',
     dialect: 'sqlite',
-    storage: './database.sqlite3'
+    storage: './data/database.sqlite3'
   }
 );
 
